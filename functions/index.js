@@ -11,3 +11,9 @@ exports.randomNumber = functions.https.onRequest((request, response) => {
 exports.toTheMyPortfolio = functions.https.onRequest((request, response) => {
   response.redirect('https://artur-portfolio.netlify.app/')
 })
+
+// http callable function
+exports.sayHello = functions.https.onCall((data, context) => {
+  const name = data.name
+  return `hello ${name} :)`
+})
